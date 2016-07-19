@@ -47,3 +47,5 @@ group :development do
 end
 
 gem "figaro"
+gem 'omniauth'
+gem 'omniauth-facebook'
