@@ -1185,3 +1185,126 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-07-19 14:36:18 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-19 14:55:48 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#homepage as HTML
+  Rendered users/homepage.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "40e59bd8a84711d47de63e0cc72534052e4cc9f0"]]
+Completed 200 OK in 581ms (Views: 559.5ms | ActiveRecord: 11.3ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2016-07-19 14:55:51 +0800
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (3.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "40e59bd8a84711d47de63e0cc72534052e4cc9f0"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_token", "1766a76ff8e7502e10fdfb5ea7e12c1feb5c2c8d"], ["updated_at", "2016-07-19 06:55:51.128329"], ["id", 3]]
+  [1m[35m (1.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 12ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-19 14:55:51 +0800
+Processing by Clearance::SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (24.3ms)
+  Rendered sessions/new.html.erb within layouts/application (92.4ms)
+Completed 200 OK in 146ms (Views: 145.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2016-07-19 14:55:53 +0800
+
+
+Started GET "/auth/facebook" for 127.0.0.1 at 2016-07-19 14:55:53 +0800
+
+
+Started GET "/auth/facebook/callback?code=AQAq2imsEDPzgzwFKTeF0yeZAKn6tK1TRgAG_twMKl3f4HK6MHClkMDpIYkmoZjOQlUi2CpYWQ3pKJ0F_HhRpqXC9mMTJ1jHS-El5HSJCVw3fQqpps3om0i-WozOQRE03BTMjO0GLKHj6W7Vgev7URKMHbGoGBOSHCS4clJ3OQ7RXmx-hMzaLVRVdEKT4mOPIiRA1Vn9P--9ikiYYfXVh8u1alkBvta2zT1CvCc_U5lPM2qsONro7jjhhw8-gFJX5KpfY9Jnj_DGgVevNkl4LHHDabaSEc9lZ3209JSLofmIDOhG-uzSIXZhlTzo2lvBhwg&state=821a0ffe5569661c67bdb1aca2b45ae88444e7f39e6b58aa" for 127.0.0.1 at 2016-07-19 14:55:54 +0800
+Processing by SessionsController#create_from_omniauth as HTML
+  Parameters: {"code"=>"AQAq2imsEDPzgzwFKTeF0yeZAKn6tK1TRgAG_twMKl3f4HK6MHClkMDpIYkmoZjOQlUi2CpYWQ3pKJ0F_HhRpqXC9mMTJ1jHS-El5HSJCVw3fQqpps3om0i-WozOQRE03BTMjO0GLKHj6W7Vgev7URKMHbGoGBOSHCS4clJ3OQ7RXmx-hMzaLVRVdEKT4mOPIiRA1Vn9P--9ikiYYfXVh8u1alkBvta2zT1CvCc_U5lPM2qsONro7jjhhw8-gFJX5KpfY9Jnj_DGgVevNkl4LHHDabaSEc9lZ3209JSLofmIDOhG-uzSIXZhlTzo2lvBhwg", "state"=>"821a0ffe5569661c67bdb1aca2b45ae88444e7f39e6b58aa", "provider"=>"facebook"}
+  [1m[36mAuthentication Load (0.2ms)[0m  [1mSELECT  "authentications".* FROM "authentications" WHERE "authentications"."provider" = $1 AND "authentications"."uid" = $2 LIMIT 1[0m  [["provider", "facebook"], ["uid", "10210207290041628"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (2.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "authentications" SET "token" = $1, "updated_at" = $2 WHERE "authentications"."id" = $3  [["token", "EAAHjPE4MZCDABAESelMMvdqwDyilNkQcX3OLJ7nUBUpmASF3sCuWxFo2a4pTCCtmUT8d19EYsbwAJKgQT2THUF6lGbTpwGHsNjFbvcswp50HqYTjbyobOOj2FeHE6YDdUZAIXZBCvw4ehtx5wiJbtjZB2zjpxQgZD"], ["updated_at", "2016-07-19 06:55:56.545106"], ["id", 1]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 79ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-19 14:55:56 +0800
+Processing by UsersController#homepage as HTML
+  Rendered users/homepage.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "1766a76ff8e7502e10fdfb5ea7e12c1feb5c2c8d"]]
+Completed 200 OK in 32ms (Views: 29.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-19 14:55:56 +0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-07-19 14:55:56 +0800
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-19 14:55:56 +0800
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-19 14:55:56 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-07-19 14:55:56 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-19 14:55:56 +0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-07-19 14:55:56 +0800
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2016-07-19 14:55:58 +0800
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "1766a76ff8e7502e10fdfb5ea7e12c1feb5c2c8d"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "remember_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_token", "d03db6a2879c58e50591bad4bcdfb9a9017064c8"], ["updated_at", "2016-07-19 06:55:58.461971"], ["id", 3]]
+  [1m[35m (3.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 8ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-19 14:55:58 +0800
+Processing by Clearance::SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 42ms (Views: 41.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-07-19 14:56:08 +0800
+Processing by Clearance::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "session"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "user1@mail.com"]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 164ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-19 14:56:08 +0800
+Processing by UsersController#homepage as HTML
+  Rendered users/homepage.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "30b7f2ee7cc37a20e25d9e5b5479424fc9e26115"]]
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 1.6ms)
+
+
+Started DELETE "/sign_out" for 127.0.0.1 at 2016-07-19 14:56:09 +0800
+Processing by Clearance::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "30b7f2ee7cc37a20e25d9e5b5479424fc9e26115"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (2.1ms)[0m  [1mUPDATE "users" SET "remember_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_token", "3a8b249a7e4a916ced17e15805a07814eb0097ca"], ["updated_at", "2016-07-19 06:56:09.795642"], ["id", 4]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/sign_in
+Completed 302 Found in 12ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2016-07-19 14:56:09 +0800
+Processing by Clearance::SessionsController#new as HTML
+  Rendered sessions/_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 37ms (Views: 36.9ms | ActiveRecord: 0.0ms)
