@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pairbnb</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% if signed_in? %>
-      Signed in as: <%= current_user.email %>
-      <%= button_to 'Sign out', sign_out_path, method: :delete %>
-    <% else %>
-      <%= link_to 'Sign in', sign_in_path %>
-      <a href="/auth/facebook">Sign in with facebook</a>
-    <% end %>
+  <head>
+    <title>Pairbnb</title>
 
-  
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+
+      <%= csrf_meta_tags %>
+
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <div class="container">
+      <% if signed_in? %>
+            Signed in as: <%= current_user.email %>
+            <button type="button" class="btn btn-default"><%= button_to 'Sign out', sign_out_path, method: :delete %></button>
+          <% else %>
+
+            <div class="btn-group" role="group">
+             <button type="button" class="btn btn-default"> <%= link_to 'Sign in', sign_in_path %></button>
+              <button type="button" class="btn btn-default"><a href="/auth/facebook">Sign in with facebook</a></button>
+            </div>
+          <% end %>
 
     <div id="flash">
       <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
       <% end %>
     </div>
-<%= yield %>
 
-</body>
+     <%= yield %>
+
+    </div> <!--container-->
+
+    <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+  </body>
+
 </html>
