@@ -1,0 +1,20 @@
+<h1>Listing</h1>
+<p>Show all listing</p>
+
+<% @listing.each do |l| %>	
+<div class ="jumbotron">
+
+	<p> <%= link_to l.title, listing_path(l.id) %> </p>
+	<p> <%= l.description %> </p>
+		<ul>
+		<% l.tags.each do |t| %>
+			<li><%= t.tag %></li>
+		<% end %>
+		</ul>
+	<p> <%= l.price %> </p>
+	<p> <%= l.propertytype %> </p>
+	<p> <%= l.roomtype %> </p>
+	<p> <%= l.numberofguess %> </p>
+
+</div>
+<% end %>

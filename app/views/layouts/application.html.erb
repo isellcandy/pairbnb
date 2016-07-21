@@ -15,17 +15,20 @@
   </head>
 
   <body>
-    <div class="container">
-      <% if signed_in? %>
+  <div class="container">
+    <nav>
+      <ul>
+        <% if signed_in? %>
             Signed in as: <%= current_user.email %>
-            <button type="button" class="btn btn-default"><%= button_to 'Sign out', sign_out_path, method: :delete %></button>
-          <% else %>
-
-            <div class="btn-group" role="group">
-             <button type="button" class="btn btn-default"> <%= link_to 'Sign in', sign_in_path %></button>
-              <button type="button" class="btn btn-default"><a href="/auth/facebook">Sign in with facebook</a></button>
-            </div>
-          <% end %>
+            <li><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
+            <li><%= link_to 'New Listing', new_listing_path %></li>
+            <li><%= link_to 'Profile', user_path(current_user) %></li>
+            <% else %>
+            <li><%= link_to 'Sign in', sign_in_path %></li>
+            <li><a href="/auth/facebook">Sign in with facebook</a></li>
+        <% end %>
+        <li><%= link_to 'all listings', listings_path %> </li>
+      </ul>
 
     <div id="flash">
       <% flash.each do |key, value| %>

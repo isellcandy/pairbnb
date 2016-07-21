@@ -1,0 +1,18 @@
+<h1>Listing</h1>
+
+<p> <%= @listing.title %> </p>
+<p> <%= @listing.description %> </p>
+<ul>
+		<% @listing.tags.each do |t| %>
+			<li><%= t.tag %></li>
+		<% end %>
+		</ul>
+<p> <%= @listing.price %> </p>
+<p> <%= @listing.propertytype  %></p>
+<p> <%= @listing.roomtype %> </p>
+<p> <%= @listing.numberofguess %> </p>
+<p> By <%= @listing.user.username%></p>
+<% if current_user.id == @listing.user_id %>
+<p> <%= button_to 'edit', edit_listing_path(@listing) , method: :get %></p>
+<p> <%= button_to 'delete', listing_path(@listing), method: :delete %></p>
+<% end %>

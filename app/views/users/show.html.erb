@@ -1,0 +1,6 @@
+<h1>Profile</h1>
+
+<p> Username: <%= @user.username %></p>
+<p> Fullname: <%= @user.fullname %></p>
+<p> Email: <%= @user.email %></p>
+<p><%= button_to 'Edit Profile', edit_user_path, method: :get %></p>
