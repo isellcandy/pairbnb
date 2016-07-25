@@ -1,0 +1,24 @@
+<div class="row-fluid">
+  <div class="well"> 
+
+		<%= form_for @reservation, :html=>{:class=>"form-horizontal"},:url => listing_reservations_path(@listing) do |f| %>
+			<div class="control-group">
+					<%= f.label "Start date", :class=>"control-label" %>
+				<div class="controls">
+					<%= f.date_select :start_date %>
+				</div>
+			</div>
+
+			<div class="control-group">
+					<%= f.label "End date" , :class=>"control-label" %>
+				<div class="controls">
+					<%= f.date_select :end_date %>
+				</div>
+			</div>
+			
+			<br>
+			<%= f.submit "Book" , :class=>"btn btn-primary" %>
+		<% end %>
+
+  </div>
+</div>

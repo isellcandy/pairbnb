@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-select";
+
+.user-pic img {
+	width: 75px;
+	height: 75px;
+	border-radius: 100%;
+}
+
+.image-main img {
+	width: 100%;
+	height: 70%;
+}
+
+.listing-index-pic img {
+	width: 200px;
+	height: 200px;
+}
+
+.f-color {
+	color: #fff;
+}
+
+.homepage-img img {
+	height: 255px;
+	width: 210px;
+}

@@ -3,10 +3,15 @@ class User < ActiveRecord::Base
   include Clearance::User
 
   has_many :authentications, :dependent => :destroy
+  has_many :listings
+  has_many :reservations, dependent: :destroy
+
+  mount_uploaders :avatars, AvatarUploader
 
   def self.create_with_auth_and_hash(authentication,auth_hash)
     create! do |u|
-      # u.first_name = auth_hash["info"]["first_name"]
+      # u.fullname = auth_hash["info"]["fullname"]
+      # u.username = auth_hash["info"]["fullname"]
       u.email = auth_hash["extra"]["raw_info"]["email"]
       u.authentications<<(authentication)
       u.encrypted_password = SecureRandom.hex

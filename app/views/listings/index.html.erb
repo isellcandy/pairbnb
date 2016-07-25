@@ -1,0 +1,47 @@
+
+<% @listing.each do |l| %>	
+<div class ="media">
+<div class="media-left media-top">
+<% unless l.avatars.empty? %>
+	<div class="listing-index-pic"><%= image_tag (l.avatars[0].url)%></div>
+<% end %>
+</div>
+
+<div class="media-body">
+	<h2 class="media-heading"> <%= link_to l.title, listing_path(l.id) %> </h2>
+	<p> <%= l.description %> </p>
+	<p><span class="glyphicon glyphicon-usd"></span> <%= l.price %> Per Night </p>
+	<p><span class="glyphicon glyphicon-home"></span> Property Type: <%= l.propertytype %> </p>
+	<p><span class="glyphicon glyphicon-user"></span> Number Of Guess: <%= l.numberofguess %> </p>
+</div>
+
+<div class="media-right media-top">
+	<%= link_to "Book now", listing_path(l.id), :class=>"btn btn-success" %>
+</div>
+<br>
+<% end %>
+
+<!--
+
+<% @listing.each do |l| %>	
+
+	<div class ="col">
+		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+		<% unless l.avatars.empty? %>
+			<div class="listing-index-pic"><%= image_tag (l.avatars[0].url)%></div>
+		<% end %>
+
+		<div class="Caption">
+			<h4> <%= link_to l.title, listing_path(l.id) %> </h4>
+			<p> <%= l.description %> </p>
+			<p><span class="glyphicon glyphicon-usd"></span> <%= l.price %> Per Night </p>
+			<p><span class="glyphicon glyphicon-home"></span> Property Type: <%= l.propertytype %> </p>
+			<p><span class="glyphicon glyphicon-user"></span> Number Of Guess: <%= l.numberofguess %> </p>
+		</div>
+
+		<div class="btn btn-success"> Book Now</div>
+		</div>
+	</div>
+<% end %>
+-->
+<%= will_paginate @listing%>

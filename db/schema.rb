@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719032018) do
+ActiveRecord::Schema.define(version: 20160725034943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,41 @@ ActiveRecord::Schema.define(version: 20160719032018) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "listings", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.decimal  "price"
+    t.string   "propertytype"
+    t.string   "roomtype"
+    t.integer  "numberofguess"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.json     "avatars"
+  end
+
+  create_table "listingtags", force: :cascade do |t|
+    t.integer  "listing_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date     "start_date"
+    t.date     "end_date"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
@@ -32,6 +67,9 @@ ActiveRecord::Schema.define(version: 20160719032018) do
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
+    t.string   "username"
+    t.string   "fullname"
+    t.json     "avatars"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
