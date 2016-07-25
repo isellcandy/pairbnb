@@ -18,7 +18,9 @@
   <%= form.text_field :email, type: 'email' %>
 </div>
 
+
 <div class="submit-field">
+<%= form.file_field :avatars, multiple: true%>
   <%= form.submit %>
 </div>
 <% end %>

@@ -1,18 +1,75 @@
-<h1>Listing</h1>
 
-<p> <%= @listing.title %> </p>
-<p> <%= @listing.description %> </p>
-<ul>
-		<% @listing.tags.each do |t| %>
-			<li><%= t.tag %></li>
-		<% end %>
-		</ul>
-<p> <%= @listing.price %> </p>
-<p> <%= @listing.propertytype  %></p>
-<p> <%= @listing.roomtype %> </p>
-<p> <%= @listing.numberofguess %> </p>
-<p> By <%= @listing.user.username%></p>
+<div class="image-div container">
+
+   <% unless @listing.avatars.empty? %>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <%for i in 0..@listing.avatars.count - 1 %>
+          <li data-target="#myCarousel" data-slide-to="<%=i%>"></li>
+          <%end%>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <% @listing.avatars.each_with_index do |avatar, index|%>
+          <div class="item <%= 'active' if index == 0%> image-main">
+            <%= image_tag (avatar.url) %>
+          </div>
+          <%end%>
+      </div>
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  <%end%>
+</div>
+
+
+
+<br>
+<div class="media">
+  <div class="media-left media-top">
+		<% unless @listing.user.avatars.empty? %>
+			<div class="user-pic"><%= image_tag (@listing.user.avatars[0].url)%></div> 
+		<% end %> 
+    <%= @listing.user.username%>
+  </div>
+
+    <div class="media-body">
+    <h4> <%= @listing.title %> </h4>
+    <p> Description: <%= @listing.description %> </p>
+    </div>
+
+    <div class="media-right media-bottom">
+		
+    </div>
+</div>
+
+<div class="btn-group" role="group">
 <% if current_user.id == @listing.user_id %>
-<p> <%= button_to 'edit', edit_listing_path(@listing) , method: :get %></p>
-<p> <%= button_to 'delete', listing_path(@listing), method: :delete %></p>
-<% end %>
+   
+      <%= button_to 'edit', edit_listing_path(@listing), method: :get ,:class => "btn btn-success" %>
+      <%= button_to 'delete', listing_path(@listing), method: :delete ,:class=>"btn btn-danger" %>
+  
+    <% end %>
+</div>
+
+<%= render '/reservations/reserve_form'%>
+		<h4>
+    <% @listing.tags.each do |t| %>
+			<span class="label label-info"><%= t.tag %></span>
+		<% end %>
+    </h4>
+<p> Price: <%= @listing.price %> Per night</p>
+<p> Property type: <%= @listing.propertytype  %></p>
+<p> room type: <%= @listing.roomtype %> </p>
+<p> number of guess: <%= @listing.numberofguess %> </p>
+

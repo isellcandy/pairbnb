@@ -1,22 +1,23 @@
 <div class="well">
 <%= form_for @listing do |f| %>
 <div class="form-horizontal" role="form">
-			
+
 	<div class="form-group">
 			<%= f.label :title %>
 			<%= f.text_field :title %>
 	</div>
 
 	<div class="form-group">
-		<%= f.label :description %>
+		<%= f.label "description" %>
 		<%= f.text_area :description %>
 	</div>
-	
+		
 	<div class="form-group">
-	<%= f.fields_for :tags do |x|%>
-		<%= x.label :tag %>
-		<%= x.text_field :tag %>
-	<% end %>
+		<%= f.fields_for :tags do |x|%>
+	
+			<%= x.label :tag %>
+			<%= x.text_field :tag, value: @taglist%>
+		<% end %>
 	</div>
 	
 	<div class="form-group">
@@ -38,8 +39,10 @@
 		<%= f.label :numberofguess %>
 		<%= f.text_field :numberofguess %>
 	</div>
-
+		<%= f.file_field :avatars, multiple: true %>
 		<%= f.submit %>
 </div>
 <% end %>
+
 </div>
+

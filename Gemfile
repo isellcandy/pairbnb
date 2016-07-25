@@ -46,9 +46,22 @@ group :development do
   gem 'spring'
 end
 
-gem "figaro"
+gem "figaro" # to hide secret key 
+
 gem 'omniauth'
-gem 'omniauth-facebook'
+gem 'omniauth-facebook' # log in through fb API
+
+# to use bootstrap
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap-select-rails'
+
+#to use upload image
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
+gem 'rmagick'
+gem 'fog'
+
+gem 'will_paginate', '~> 3.1.0'
+
+gem 'jquery-ui-rails'

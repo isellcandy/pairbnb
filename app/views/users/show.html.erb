@@ -1,6 +1,30 @@
 <h1>Profile</h1>
 
+<% unless @user.avatars.empty? %>
+	<div class="user-pic"><%= image_tag (@user.avatars[0].url)%></div>
+<% end %>
+
 <p> Username: <%= @user.username %></p>
 <p> Fullname: <%= @user.fullname %></p>
 <p> Email: <%= @user.email %></p>
 <p><%= button_to 'Edit Profile', edit_user_path, method: :get %></p>
+
+<h2>My Listings</h2>
+<% @user.listings.each do |l| %>
+<p><%= link_to l.title, listing_path(l.id) %></p>
+			<% l.reservations.each do |r| %>
+				<p><%= r.user.username%></p>
+				<p><%= r.start_date%></p>
+				<p><%= r.end_date%></p>
+				<%end%>
+<%end%>
+<h2> My Reservations</h2>
+<% @user.reservations.each do |r| %>
+<p><%= link_to r.listing.title, listing_path(r.listing_id)%> 
+		Start date: <%= r.start_date%>
+		End date: <%= r.end_date%>
+		<%= button_to 'Cancel trip', listing_reservation_path(r.listing_id,r.id), method: :delete%>	
+
+</p>
+
+<%end%>

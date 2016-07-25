@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update(user_params)
-			render :homepage
+			redirect_to user_path(@user)
 			flash[:success] = "Updated profile successfully"
 		else
 			flash[:danger] = "Profile update fail"
@@ -23,6 +23,6 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:fullname, :username, :email) 
+		params.require(:user).permit(:fullname, :username, :email, {avatars:[]}) 
 	end
 end
