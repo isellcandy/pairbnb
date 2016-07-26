@@ -4,12 +4,36 @@ class ReservationsController < ApplicationController
 	def create
 		@listing = Listing.find(params[:listing_id])
 		@reservation = @listing.reservations.new(reservation_params)
-		@reservation.user_id = current_user.id
-		if @reservation.save
-			flash[:success] = "successfully reserved your position"
+		if @reservation.wrongDate?
+			flash[:danger] = "Start date is greater than end date"
 		else
-			flash[:danger] = @reservation.errors.full_messages
-		end
+			reserve_check = Reservation.where(listing_id: @listing.id)
+			reserve_check_count = reserve_check.count
+			unless reserve_check.empty?
+
+				reserve_check.each_with_index do |r, ind|
+					if @reservation.overlap?(r)
+						flash[:danger] = "date overlaps with other user"
+						break
+					elsif ind+1 == reserve_check_count
+						if @reservation.overlap?(r)
+							flash[:danger] = "date overlaps with other user"
+							redirect_to listing_path(@listing)
+						else
+							@reservation.user_id = current_user.id
+							@reservation.save
+							flash[:success] = "successfully reserved your position"
+						end	
+					else
+						next
+					end
+				end
+			else
+				@reservation.user_id = current_user.id
+				@reservation.save
+				flash[:success] = "successfully reserved your position"
+			end
+		end				
 		redirect_to listing_path(@listing)
 	end
 
