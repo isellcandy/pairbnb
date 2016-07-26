@@ -57,7 +57,7 @@
 <% if current_user.id == @listing.user_id %>
    
       <%= button_to 'edit', edit_listing_path(@listing), method: :get ,:class => "btn btn-success" %>
-      <%= button_to 'delete', listing_path(@listing), method: :delete ,:class=>"btn btn-danger" %>
+      <%= button_to 'delete',listing_path(@listing), method: :delete ,:class=>"btn btn-danger", :'data-confirm'=>'Are you sure' %>
   
     <% end %>
 </div>

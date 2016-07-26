@@ -1,0 +1,23 @@
+<%= form_for @user , remote:true do |form| %>
+        
+<div class="text-field">
+  <%= form.label "fullname: " %>
+  <%= form.text_field :fullname %>
+</div>
+
+<div class="text-field">
+  <%= form.label "Username: " %>
+  <%= form.text_field :username %>
+</div>
+
+<div class="text-field">
+  <%= form.label "e-mail: " %>
+  <%= form.text_field :email, type: 'email' %>
+</div>
+
+<div class="submit-field">
+<%= form.file_field :avatars, multiple: true, id: "profile_pic_upload"%>
+<br>
+  <%= form.submit "Update", class: "btn btn-info btn-md"%>
+</div>
+<% end %>

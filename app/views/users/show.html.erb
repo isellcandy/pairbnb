@@ -4,10 +4,12 @@
 	<div class="user-pic"><%= image_tag (@user.avatars[0].url)%></div>
 <% end %>
 
-<p> Username: <%= @user.username %></p>
-<p> Fullname: <%= @user.fullname %></p>
-<p> Email: <%= @user.email %></p>
-<p><%= button_to 'Edit Profile', edit_user_path, method: :get %></p>
+<div id="user_profile_info">
+	<p> Username: <%= @user.username %></p>
+	<p> Fullname: <%= @user.fullname %></p>
+	<p> Email: <%= @user.email %></p>
+	<p><%= button_to 'Edit Profile', edit_user_path, method: :get , class: "btn btn-info btn-md", remote: true%></p>
+</div>
 
 <h2>My Listings</h2>
 <% @user.listings.each do |l| %>

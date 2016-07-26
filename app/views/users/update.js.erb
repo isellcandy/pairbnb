@@ -1,0 +1,6 @@
+$('.edit_user').remove()
+$('#user_profile_info').show()
+$('#user_profile_info').html('<p> Username: <%= @user.username %></p><p> Fullname: <%= @user.fullname %></p><p> Email: <%= @user.email %></p><p><%= button_to 'Edit Profile', edit_user_path, method: :get , class: "btn btn-info btn-md", remote: true%></p>')
+
+
+
