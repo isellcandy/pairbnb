@@ -22,15 +22,17 @@ class ReservationsController < ApplicationController
 						else
 							@reservation.user_id = current_user.id
 							@reservation.save
+							ReservationMailer.new_reservation(@listing.user).deliver
 							flash[:success] = "successfully reserved your position"
 						end	
 					else
 						next
-					end
-				end
-			else
+					end #if 
+				end #do
+			else #unless
 				@reservation.user_id = current_user.id
 				@reservation.save
+				ReservationMailer.new_reservation(@listing.user).deliver
 				flash[:success] = "successfully reserved your position"
 			end
 		end				
