@@ -22,7 +22,7 @@ class ReservationsController < ApplicationController
 						else
 							@reservation.user_id = current_user.id
 							@reservation.save
-							ReservationMailer.new_reservation(@listing.user).deliver
+							ReservationMailer.new_reservation(@listing.user).deliver_later
 							flash[:success] = "successfully reserved your position"
 						end	
 					else
@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
 			else #unless
 				@reservation.user_id = current_user.id
 				@reservation.save
-				ReservationMailer.new_reservation(@listing.user).deliver
+				ReservationMailer.new_reservation(@listing.user).deliver_later
 				flash[:success] = "successfully reserved your position"
 			end
 		end				
