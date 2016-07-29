@@ -1,5 +1,8 @@
 class ReservationsController < ApplicationController
 
+	def index
+		@reservations = Reservation.where(user_id: current_user.id, payment: false) 
+	end
 
 	def create
 		@listing = Listing.find(params[:listing_id])

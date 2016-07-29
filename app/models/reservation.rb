@@ -12,9 +12,23 @@ class Reservation < ActiveRecord::Base
 	def wrongDate?
 		self.end_date < self.start_date
 	end
+
+	def total_days
+		(self.end_date - self.start_date).to_i
+	end
+
+	def total_price
+		self.total_days * self.listing.price
+	end
+
+	def paid
+		self.payment = true
+	end
+
 end
 
 # !(start a > end b || end a < start b) 
+# 
 
 # |----a------|
 # 							|------b------|
