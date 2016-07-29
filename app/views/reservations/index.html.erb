@@ -1,0 +1,13 @@
+<h1>Reservations</h1>
+
+<% @reservations.each do |r| %>
+	<p>	<%= link_to r.listing.title, listing_path(r.listing.id) %><br> 
+			Start date: <%= r.start_date%><br>
+			End date: <%= r.end_date%><br>
+			Total days: <%= r.total_days %><br>
+			Total Fee: <%= r.total_price %>
+	</p>
+	<% end %>
+
+	<p>Total Reservation fee: <%= cart_total_price(@reservations) %></p>
+	<%=link_to "Checkout", new_transaction_path, class: "button" unless @reservations.empty?%>

@@ -67,3 +67,5 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'jquery-ui-rails'
 gem 'sidekiq'
 gem "letter_opener", :group => :development
+gem 'braintree'
+gem 'gon'
