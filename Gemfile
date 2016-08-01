@@ -69,3 +69,4 @@ gem 'sidekiq'
 gem "letter_opener", :group => :development
 gem 'braintree'
 gem 'gon'
+gem 'searchkick'

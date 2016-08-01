@@ -2,8 +2,13 @@ class ListingsController < ApplicationController
 	before_action :set_listings, only: [:show, :edit, :update, :destroy]
 
 	def index 
-		@listing = Listing.order(created_at: :desc)
-		@listing = @listing.paginate(:page => params[:page], :per_page => 5)
+		if params[:query].present?
+			@listing = Listing.search(params[:query])
+			
+		else
+			@listing = Listing.order(created_at: :desc)
+			@listing = @listing.paginate(:page => params[:page], :per_page => 5)
+	end
 	end
 
 	def show
