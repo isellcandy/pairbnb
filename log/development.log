@@ -60584,3 +60584,1491 @@ Processing by ListingsController#index as HTML
   Rendered listings/index.html.erb within layouts/application (26.1ms)
   [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
 Completed 200 OK in 232ms (Views: 225.0ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/listings/17" for 127.0.0.1 at 2016-07-29 12:52:13 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mListing Load (0.9ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+  Rendered reservations/_reserve_form.html.erb (61.6ms)
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "listingtags" ON "tags"."id" = "listingtags"."tag_id" WHERE "listingtags"."listing_id" = $1[0m  [["listing_id", 17]]
+  Rendered listings/show.html.erb within layouts/application (211.8ms)
+Completed 200 OK in 1975ms (Views: 1853.3ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/listings/17/reservations" for 127.0.0.1 at 2016-07-29 12:52:21 +0800
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reservation"=>{"start_date(1i)"=>"2016", "start_date(2i)"=>"7", "start_date(3i)"=>"29", "end_date(1i)"=>"2016", "end_date(2i)"=>"7", "end_date(3i)"=>"31"}, "commit"=>"Book", "listing_id"=>"17"}
+  [1m[35mListing Load (0.3ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 17]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "reservations" WHERE "reservations"."listing_id" = $1  [["listing_id", 17]]
+  [1m[36mReservation Load (0.2ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 17]]
+Redirected to http://localhost:3000/listings/17
+Completed 302 Found in 20ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/listings/17" for 127.0.0.1 at 2016-07-29 12:52:21 +0800
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mListing Load (2.6ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mUser Load (2.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+  Rendered reservations/_reserve_form.html.erb (2.9ms)
+  [1m[36mTag Load (3.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "listingtags" ON "tags"."id" = "listingtags"."tag_id" WHERE "listingtags"."listing_id" = $1[0m  [["listing_id", 17]]
+  Rendered listings/show.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 357ms (Views: 345.9ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-07-29 12:52:22 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-07-29 12:52:22 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-07-29 12:52:22 +0800
+
+
+Started POST "/listings/17/reservations" for 127.0.0.1 at 2016-07-29 12:52:32 +0800
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "reservation"=>{"start_date(1i)"=>"2016", "start_date(2i)"=>"10", "start_date(3i)"=>"29", "end_date(1i)"=>"2016", "end_date(2i)"=>"10", "end_date(3i)"=>"31"}, "commit"=>"Book", "listing_id"=>"17"}
+  [1m[35mListing Load (2.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36m (2.6ms)[0m  [1mSELECT COUNT(*) FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 17]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "reservations" WHERE "reservations"."listing_id" = $1  [["listing_id", 17]]
+  [1m[36mReservation Load (2.3ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 17]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "reservations" ("start_date", "end_date", "listing_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["start_date", "2016-10-29"], ["end_date", "2016-10-31"], ["listing_id", 17], ["user_id", 2], ["created_at", "2016-07-29 04:52:32.107670"], ["updated_at", "2016-07-29 04:52:32.107670"]]
+  [1m[36m (283.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 738a3bc5-c33b-44bc-90fd-de91d3101dff) to Sidekiq(mailers) with arguments: "ReservationMailer", "new_reservation", "deliver_now", gid://pairbnb/User/1
+Redirected to http://localhost:3000/listings/17
+Completed 302 Found in 417ms (ActiveRecord: 291.9ms)
+
+
+Started GET "/listings/17" for 127.0.0.1 at 2016-07-29 12:52:32 +0800
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mListing Load (4.4ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mUser Load (4.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+  Rendered reservations/_reserve_form.html.erb (2.9ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "listingtags" ON "tags"."id" = "listingtags"."tag_id" WHERE "listingtags"."listing_id" = $1  [["listing_id", 17]]
+  Rendered listings/show.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 191ms (Views: 175.0ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-07-29 12:52:32 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-07-29 12:52:32 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-07-29 12:52:33 +0800
+
+
+Started GET "/reservations" for 127.0.0.1 at 2016-07-29 12:52:36 +0800
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+  [1m[35mReservation Load (0.3ms)[0m  SELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1 AND "reservations"."payment" = $2  [["user_id", 2], ["payment", "f"]]
+  [1m[36mListing Load (2.3ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mListing Load (0.5ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  Rendered reservations/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 222ms (Views: 208.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2016-07-29 12:52:42 +0800
+Processing by TransactionsController#new as HTML
+  Rendered transactions/new.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 2202ms (Views: 202.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2016-07-29 12:52:46 +0800
+Processing by TransactionsController#new as HTML
+  Rendered transactions/new.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 1929ms (Views: 207.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/listings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/transactions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/application.self-95e58ab3eb509777c390b5049c58b05275c45ede3b9ca2fa5bfaa2ca4fbb73c3.css?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/jquery-ui/accordion.self-c95f320275150a94241b004a91e21eef9c5ae9965a793cb3e2475f6078a1670d.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:48 +0800
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/droppable.self-a7a2b4c2cec8fc176f51e4e4291d92bfd3eec40b6a580b47fc54c16334d52882.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect.self-3acdb29e7da09c8f0195b994d2f04d73bfef50dc539c84fd2c835d964d33e5c1.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-bounce.self-bfcb9288797ecd234ddeedf4fbc5b4c9de94a4e6d8d44e6faa5b5e9836fad9fd.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-blind.self-ed102209d7aa0b7374f3db8478cc7dcff5f9980d3146e8bf9fbfab959c6d5d8a.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-clip.self-7368e4597c32360b162d264ff8bbd0cf9fb1535eb9b4564e6eb7c1db3c774bf3.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-drop.self-294aaa72126ad9c94d6558cca792eb3716754713aca98f18a9dd7c493150ed92.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-explode.self-68e74dc114a52f3f4d7033e40c39196961bdcf439652daa2e98baa115c7bb44b.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-fade.self-42d542a5253e0a610717460102ee6bee339c656cc188e491d89eb0779043c963.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-fold.self-ad9967f153423916300dbf1104b00f7ad7bbd6a222a0fcc1012ebe251bcb13c8.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-highlight.self-f922b7179ab8ccfa7865141f38865bba0a3d2bdceba7561c27ca14544dbfd996.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-size.self-368aecefa09656a2be5c72dc8e685b120363a3df812134cbd2dd998bafa179fd.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-scale.self-884a5abcb6d90fcd9f9a071aa8329638184df688afced1b1d3b6be6c69f4dd7f.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-puff.self-93415831093923a70f671d73e8d0b3d94deb37ac7472a036a4add545f565c166.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-pulsate.self-eb107c0d136eccdfbd8a2f0f2ee71e0f6911cb300c6b63cc2fe4f6532e6a9a97.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-shake.self-63bcc14897aac5b84e10690be94d64d5724f864aa14c913b4d1030c461a256ad.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-slide.self-c93054a4a80d1f986760806d81ab067e4a4120bf103337e152ecc24d36e785f6.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/effect-transfer.self-181245634ec522320fc1081f6dbf94fd982f34eefa03555f76817dedfcdea336.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/progressbar.self-a259ff5a2a5e7aef0ec21bda94edd0f6bc1e9821128d901de415956edf212b0d.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/selectable.self-42e53fc2f95211314e36a8094c42560f869c207f16d68cfc206aa37201dcdc03.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/selectmenu.self-09dbcac573f0e508194bd9deff254db090889b380d030261857860309c0918e8.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/slider.self-8af8d2a0661743ba88b4cfb99d5c8c874cfa3fc6528ae4e9252366b388def0b7.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/spinner.self-3c8c95a7bc9c877d0f9c16789246bbedda6b8e8fbf5927951babdab775aed02e.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui/tooltip.self-38f04ac3a6c8fb2391ec6832b68845671cc9013a94371b7eb239478f4835eb73.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery-ui.self-52111578aa54225c9ebfe06f78a62771020ee548bb27d62228ee3f5e6633969d.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/listings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/transactions.self-c5259d46c6172f2cbc6ff32393e1f114f24048e4e2f2fa180100424967a43e28.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-07-29 12:52:49 +0800
+
+
+Started POST "/transactions" for 127.0.0.1 at 2016-07-29 12:53:05 +0800
+Processing by TransactionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"[FILTERED]", "payment_method_nonce"=>"21b8b97d-381d-42cc-9b13-e2ce95aa72c3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+  [1m[35mReservation Load (6.4ms)[0m  SELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1 AND "reservations"."payment" = $2  [["user_id", 2], ["payment", "f"]]
+  [1m[36mListing Load (0.2ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mListing Load (0.2ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "reservations" SET "payment" = $1, "transaction_id" = $2, "updated_at" = $3 WHERE "reservations"."id" = $4  [["payment", "t"], ["transaction_id", "j7p4nmwp"], ["updated_at", "2016-07-29 04:53:07.504283"], ["id", 54]]
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "reservations" SET "payment" = $1, "transaction_id" = $2, "updated_at" = $3 WHERE "reservations"."id" = $4[0m  [["payment", "t"], ["transaction_id", "j7p4nmwp"], ["updated_at", "2016-07-29 04:53:07.509606"], ["id", 55]]
+  [1m[35m (1.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 2151ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-07-29 12:53:07 +0800
+Processing by UsersController#homepage as HTML
+  Rendered users/homepage.html.erb within layouts/application (27.5ms)
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 228ms (Views: 225.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-07-29 12:53:07 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-07-29 12:53:07 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-07-29 12:53:07 +0800
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-07-29 12:53:09 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mListing Load (0.3ms)[0m  [1mSELECT "listings".* FROM "listings" WHERE "listings"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mReservation Load (2.9ms)[0m  SELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1  [["listing_id", 19]]
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReservation Load (0.5ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 20]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mReservation Load (2.8ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 21]]
+  [1m[35mReservation Load (0.3ms)[0m  SELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1  [["user_id", 2]]
+  [1m[36mListing Load (1.4ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mListing Load (1.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36mListing Load (6.0ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mListing Load (0.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  Rendered users/show.html.erb within layouts/application (65.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 261ms (Views: 239.7ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (4.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mListing Load (0.3ms)[0m  SELECT "listings".* FROM "listings" WHERE "listings"."user_id" = $1  [["user_id", 2]]
+  [1m[36mReservation Load (0.2ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1[0m  [["listing_id", 19]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mReservation Load (0.1ms)[0m  SELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1  [["listing_id", 20]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mReservation Load (0.7ms)[0m  SELECT "reservations".* FROM "reservations" WHERE "reservations"."listing_id" = $1  [["listing_id", 21]]
+  [1m[36mReservation Load (3.7ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[35mListing Load (0.1ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mListing Load (0.1ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mListing Load (0.2ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 20]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 17]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 19]]
+  [1m[36mListing Load (0.1ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1  [["id", 17]]
+  Rendered users/show.html.erb within layouts/application (39.9ms)
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 230ms (Views: 216.6ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/assets/listings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/transactions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/application.self-95e58ab3eb509777c390b5049c58b05275c45ede3b9ca2fa5bfaa2ca4fbb73c3.css?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/accordion.self-c95f320275150a94241b004a91e21eef9c5ae9965a793cb3e2475f6078a1670d.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/droppable.self-a7a2b4c2cec8fc176f51e4e4291d92bfd3eec40b6a580b47fc54c16334d52882.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect.self-3acdb29e7da09c8f0195b994d2f04d73bfef50dc539c84fd2c835d964d33e5c1.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect-blind.self-ed102209d7aa0b7374f3db8478cc7dcff5f9980d3146e8bf9fbfab959c6d5d8a.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect-bounce.self-bfcb9288797ecd234ddeedf4fbc5b4c9de94a4e6d8d44e6faa5b5e9836fad9fd.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect-clip.self-7368e4597c32360b162d264ff8bbd0cf9fb1535eb9b4564e6eb7c1db3c774bf3.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect-drop.self-294aaa72126ad9c94d6558cca792eb3716754713aca98f18a9dd7c493150ed92.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect-explode.self-68e74dc114a52f3f4d7033e40c39196961bdcf439652daa2e98baa115c7bb44b.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect-fade.self-42d542a5253e0a610717460102ee6bee339c656cc188e491d89eb0779043c963.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect-fold.self-ad9967f153423916300dbf1104b00f7ad7bbd6a222a0fcc1012ebe251bcb13c8.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:16 +0800
+
+
+Started GET "/assets/jquery-ui/effect-highlight.self-f922b7179ab8ccfa7865141f38865bba0a3d2bdceba7561c27ca14544dbfd996.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/effect-size.self-368aecefa09656a2be5c72dc8e685b120363a3df812134cbd2dd998bafa179fd.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/effect-scale.self-884a5abcb6d90fcd9f9a071aa8329638184df688afced1b1d3b6be6c69f4dd7f.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/effect-pulsate.self-eb107c0d136eccdfbd8a2f0f2ee71e0f6911cb300c6b63cc2fe4f6532e6a9a97.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/effect-puff.self-93415831093923a70f671d73e8d0b3d94deb37ac7472a036a4add545f565c166.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/effect-shake.self-63bcc14897aac5b84e10690be94d64d5724f864aa14c913b4d1030c461a256ad.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/effect-slide.self-c93054a4a80d1f986760806d81ab067e4a4120bf103337e152ecc24d36e785f6.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/effect-transfer.self-181245634ec522320fc1081f6dbf94fd982f34eefa03555f76817dedfcdea336.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/progressbar.self-a259ff5a2a5e7aef0ec21bda94edd0f6bc1e9821128d901de415956edf212b0d.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/selectable.self-42e53fc2f95211314e36a8094c42560f869c207f16d68cfc206aa37201dcdc03.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/selectmenu.self-09dbcac573f0e508194bd9deff254db090889b380d030261857860309c0918e8.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/slider.self-8af8d2a0661743ba88b4cfb99d5c8c874cfa3fc6528ae4e9252366b388def0b7.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/spinner.self-3c8c95a7bc9c877d0f9c16789246bbedda6b8e8fbf5927951babdab775aed02e.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui/tooltip.self-38f04ac3a6c8fb2391ec6832b68845671cc9013a94371b7eb239478f4835eb73.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery-ui.self-52111578aa54225c9ebfe06f78a62771020ee548bb27d62228ee3f5e6633969d.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/listings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/transactions.self-c5259d46c6172f2cbc6ff32393e1f114f24048e4e2f2fa180100424967a43e28.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-07-29 12:53:17 +0800
+
+
+Started GET "/reservations" for 127.0.0.1 at 2016-07-29 12:53:19 +0800
+Processing by ReservationsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+  [1m[36mReservation Load (1.1ms)[0m  [1mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1 AND "reservations"."payment" = $2[0m  [["user_id", 2], ["payment", "f"]]
+  Rendered reservations/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 186ms (Views: 183.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/listings" for 127.0.0.1 at 2016-07-29 12:53:21 +0800
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (0.5ms)[0m  SELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0
+  [1m[36m (2.3ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (21.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 223ms (Views: 218.5ms | ActiveRecord: 3.1ms)
+  [1m[36mListing Load (8.7ms)[0m  [1mSELECT  "listings".* FROM "listings"  ORDER BY "listings"."id" ASC LIMIT 1000[0m
+  [1m[33mListing Import (395.7ms)[0m  {"count":6}
+  [1m[33mListing Search (305.0ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"room","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"room","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"room","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"room","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[36mListing Load (0.6ms)[0m  [1mSELECT "listings".* FROM "listings" WHERE "listings"."id" IN (20, 18, 21)[0m
+
+
+Started GET "/listings" for 127.0.0.1 at 2016-08-01 10:20:43 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (8.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (17.0ms)[0m  SELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0
+  [1m[36m (5.4ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (221.9ms)
+  [1m[35mUser Load (19.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 1868ms (Views: 1754.8ms | ActiveRecord: 62.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:20:45 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:20:46 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:20:46 +0800
+
+
+Started GET "/list" for 127.0.0.1 at 2016-08-01 10:20:48 +0800
+
+ActionController::RoutingError (No route matches [GET] "/list"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  request_store (1.3.1) lib/request_store/middleware.rb:9:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /home/nextacademy/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /home/nextacademy/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /home/nextacademy/.rvm/rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (42.5ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (104.6ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (4.4ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.9ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (72.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-01 10:25:37 +0800
+Processing by UsersController#homepage as HTML
+  Rendered users/homepage.html.erb within layouts/application (9.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/nextacademy/Desktop/week/pairbnb/app/views/layouts/application.html.erb:36: syntax error, unexpected keyword_class, expecting ')'
+...ag :query, params[:query] class: "form-control", placeholder...
+...                               ^
+/home/nextacademy/Desktop/week/pairbnb/app/views/layouts/application.html.erb:36: syntax error, unexpected ',', expecting ')'
+...[:query] class: "form-control", placeholder: "Where to?");@o...
+...                               ^):
+  app/views/layouts/application.html.erb:36: syntax error, unexpected keyword_class, expecting ')'
+  app/views/layouts/application.html.erb:36: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.1ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.8ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/nextacademy/.rvm/gems/ruby-2.3.1/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (66.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+Processing by UsersController#homepage as HTML
+  Rendered users/homepage.html.erb within layouts/application (20.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 209ms (Views: 207.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/listings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/transactions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/application.self-95e58ab3eb509777c390b5049c58b05275c45ede3b9ca2fa5bfaa2ca4fbb73c3.css?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/accordion.self-c95f320275150a94241b004a91e21eef9c5ae9965a793cb3e2475f6078a1670d.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/droppable.self-a7a2b4c2cec8fc176f51e4e4291d92bfd3eec40b6a580b47fc54c16334d52882.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect.self-3acdb29e7da09c8f0195b994d2f04d73bfef50dc539c84fd2c835d964d33e5c1.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-blind.self-ed102209d7aa0b7374f3db8478cc7dcff5f9980d3146e8bf9fbfab959c6d5d8a.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-bounce.self-bfcb9288797ecd234ddeedf4fbc5b4c9de94a4e6d8d44e6faa5b5e9836fad9fd.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-clip.self-7368e4597c32360b162d264ff8bbd0cf9fb1535eb9b4564e6eb7c1db3c774bf3.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-drop.self-294aaa72126ad9c94d6558cca792eb3716754713aca98f18a9dd7c493150ed92.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-explode.self-68e74dc114a52f3f4d7033e40c39196961bdcf439652daa2e98baa115c7bb44b.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-fade.self-42d542a5253e0a610717460102ee6bee339c656cc188e491d89eb0779043c963.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-fold.self-ad9967f153423916300dbf1104b00f7ad7bbd6a222a0fcc1012ebe251bcb13c8.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-highlight.self-f922b7179ab8ccfa7865141f38865bba0a3d2bdceba7561c27ca14544dbfd996.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:57 +0800
+
+
+Started GET "/assets/jquery-ui/effect-size.self-368aecefa09656a2be5c72dc8e685b120363a3df812134cbd2dd998bafa179fd.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/effect-scale.self-884a5abcb6d90fcd9f9a071aa8329638184df688afced1b1d3b6be6c69f4dd7f.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/effect-puff.self-93415831093923a70f671d73e8d0b3d94deb37ac7472a036a4add545f565c166.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/effect-pulsate.self-eb107c0d136eccdfbd8a2f0f2ee71e0f6911cb300c6b63cc2fe4f6532e6a9a97.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/effect-shake.self-63bcc14897aac5b84e10690be94d64d5724f864aa14c913b4d1030c461a256ad.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/effect-slide.self-c93054a4a80d1f986760806d81ab067e4a4120bf103337e152ecc24d36e785f6.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/effect-transfer.self-181245634ec522320fc1081f6dbf94fd982f34eefa03555f76817dedfcdea336.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/progressbar.self-a259ff5a2a5e7aef0ec21bda94edd0f6bc1e9821128d901de415956edf212b0d.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/selectable.self-42e53fc2f95211314e36a8094c42560f869c207f16d68cfc206aa37201dcdc03.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/selectmenu.self-09dbcac573f0e508194bd9deff254db090889b380d030261857860309c0918e8.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/slider.self-8af8d2a0661743ba88b4cfb99d5c8c874cfa3fc6528ae4e9252366b388def0b7.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/spinner.self-3c8c95a7bc9c877d0f9c16789246bbedda6b8e8fbf5927951babdab775aed02e.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui/tooltip.self-38f04ac3a6c8fb2391ec6832b68845671cc9013a94371b7eb239478f4835eb73.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery-ui.self-52111578aa54225c9ebfe06f78a62771020ee548bb27d62228ee3f5e6633969d.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/listings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/transactions.self-c5259d46c6172f2cbc6ff32393e1f114f24048e4e2f2fa180100424967a43e28.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/japan-29a7f7bb53e530a0246018ff7c882ac79521a2a151615eebd5ddc51d7e314213.jpg" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/london-90f56178f01309e7c90bb86e54012d28be9d70ccf3a68345df479e0d29c03ae2.jpg" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/rome-bc96392dbe9ba2fb1dd8870b37e7cd69011d7fb86d466af30f4c611267aca621.jpg" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/sf-64d1eb0a1ff1b971d5c058aee4f6f3c628cbe3053351437267421aa1baad5212.jpg" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/paris-f37c46b516065f8ffc1f4ae1c52855f66def0057004b9743d40c0c4b269d2d9c.jpg" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/thaland-2e353aeea25e9930a90cb2aa7a64e95cdc095b8649440a9d0a3066c1bf41adc6.jpg" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/assets/venice-89353d54b6a628acdafd42f96b9176d545bb6671c5d0dd179110aaf357a2363b.jpg" for 127.0.0.1 at 2016-08-01 10:25:58 +0800
+
+
+Started GET "/listings" for 127.0.0.1 at 2016-08-01 10:26:02 +0800
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (4.0ms)[0m  SELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (16.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 207ms (Views: 201.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=home&commit=Search" for 127.0.0.1 at 2016-08-01 10:26:05 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"home", "commit"=>"Search"}
+  [1m[33mListing Search (482.0ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"home","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"home","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"home","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"home","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[36mListing Load (0.4ms)[0m  [1mSELECT "listings".* FROM "listings" WHERE "listings"."id" IN (20, 15, 19, 17)[0m
+  Rendered listings/index.html.erb within layouts/application (7.9ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 769ms (Views: 175.5ms | Searchkick: 482.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:26:06 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:26:06 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:26:06 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=house&commit=Search" for 127.0.0.1 at 2016-08-01 10:26:14 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"house", "commit"=>"Search"}
+  [1m[33mListing Search (75.3ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"house","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"house","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"house","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"house","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[36mListing Load (6.3ms)[0m  [1mSELECT "listings".* FROM "listings" WHERE "listings"."id" IN (20, 18, 21)[0m
+  Rendered listings/index.html.erb within layouts/application (13.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 269ms (Views: 185.7ms | Searchkick: 75.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:26:15 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:26:15 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:26:15 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=2&commit=Search" for 127.0.0.1 at 2016-08-01 10:26:30 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"2", "commit"=>"Search"}
+  [1m[33mListing Search (74.3ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"2","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"2","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"2","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"2","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[36mListing Load (0.4ms)[0m  [1mSELECT "listings".* FROM "listings" WHERE "listings"."id" IN (20, 15, 21, 19, 18, 17)[0m
+  Rendered listings/index.html.erb within layouts/application (8.5ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 307ms (Views: 230.5ms | Searchkick: 74.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:26:30 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:26:30 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:26:30 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=victorian&commit=Search" for 127.0.0.1 at 2016-08-01 10:26:54 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"victorian", "commit"=>"Search"}
+  [1m[33mListing Search (77.6ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"victorian","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"victorian","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"victorian","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"victorian","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[36mListing Load (6.0ms)[0m  [1mSELECT "listings".* FROM "listings" WHERE "listings"."id" = 20[0m
+  Rendered listings/index.html.erb within layouts/application (13.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 290ms (Views: 205.0ms | Searchkick: 77.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:26:54 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:26:54 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:26:54 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=burn&commit=Search" for 127.0.0.1 at 2016-08-01 10:26:58 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"burn", "commit"=>"Search"}
+  [1m[33mListing Search (42.3ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"burn","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"burn","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"burn","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"burn","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  Rendered listings/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 217ms (Views: 173.3ms | Searchkick: 42.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:26:59 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:26:59 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:26:59 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=&commit=Search" for 127.0.0.1 at 2016-08-01 10:27:06 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"", "commit"=>"Search"}
+  [1m[35mListing Load (0.3ms)[0m  SELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (10.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 187ms (Views: 185.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:27:06 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:27:06 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:27:06 +0800
+
+
+Started GET "/listings?commit=Search&page=2&query=&utf8=%E2%9C%93" for 127.0.0.1 at 2016-08-01 10:27:10 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"commit"=>"Search", "page"=>"2", "query"=>"", "utf8"=>"✓"}
+  [1m[36mListing Load (0.3ms)[0m  [1mSELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 5[0m
+  Rendered listings/index.html.erb within layouts/application (10.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 182ms (Views: 180.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/listings?commit=Search&page=1&query=&utf8=%E2%9C%93" for 127.0.0.1 at 2016-08-01 10:27:12 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"commit"=>"Search", "page"=>"1", "query"=>"", "utf8"=>"✓"}
+  [1m[36mListing Load (2.9ms)[0m  [1mSELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (5.8ms)[0m  SELECT COUNT(*) FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (13.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 227ms (Views: 217.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=camp&commit=Search" for 127.0.0.1 at 2016-08-01 10:27:14 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"camp", "commit"=>"Search"}
+  [1m[33mListing Search (59.5ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"camp","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"camp","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"camp","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"camp","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[35mListing Load (0.4ms)[0m  SELECT "listings".* FROM "listings" WHERE "listings"."id" = 15
+  Rendered listings/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 228ms (Views: 163.4ms | Searchkick: 59.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:27:14 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:27:14 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:27:14 +0800
+
+
+Started GET "/listings" for 127.0.0.1 at 2016-08-01 10:32:03 +0800
+Processing by ListingsController#index as HTML
+  [1m[35mListing Load (2.9ms)[0m  SELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0
+  [1m[36m (2.2ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (10.1ms)
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 167ms (Views: 159.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/listings/new" for 127.0.0.1 at 2016-08-01 10:32:05 +0800
+Processing by ListingsController#new as HTML
+  Rendered listings/_form.html.erb (31.8ms)
+  Rendered listings/new.html.erb within layouts/application (32.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 216ms (Views: 214.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-08-01 10:32:08 +0800
+Processing by UsersController#homepage as HTML
+  Rendered users/homepage.html.erb within layouts/application (12.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 191ms (Views: 190.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=korea&commit=Search" for 127.0.0.1 at 2016-08-01 10:33:43 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"korea", "commit"=>"Search"}
+  [1m[33mListing Search (62.2ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"korea","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"korea","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"korea","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"korea","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  Rendered listings/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 312ms (Views: 240.9ms | Searchkick: 62.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:33:43 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:33:43 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:33:43 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=&commit=Search" for 127.0.0.1 at 2016-08-01 10:33:46 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"", "commit"=>"Search"}
+  [1m[35mListing Load (4.9ms)[0m  SELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0
+  [1m[36m (2.8ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (12.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 166ms (Views: 157.5ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:33:47 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:33:47 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:33:47 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=camping+in+woods&commit=Search" for 127.0.0.1 at 2016-08-01 10:35:35 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"camping in woods", "commit"=>"Search"}
+  [1m[33mListing Search (123.4ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"camping in woods","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"camping in woods","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"camping in woods","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"camping in woods","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  Rendered listings/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 308ms (Views: 183.6ms | Searchkick: 123.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:35:36 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:35:36 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:35:36 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=&commit=Search" for 127.0.0.1 at 2016-08-01 10:35:40 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"", "commit"=>"Search"}
+  [1m[35mListing Load (1.8ms)[0m  SELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (10.1ms)
+  [1m[35mUser Load (4.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 183ms (Views: 176.2ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:35:40 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:35:40 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:35:40 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=camping+2+ppl&commit=Search" for 127.0.0.1 at 2016-08-01 10:35:53 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"camping 2 ppl", "commit"=>"Search"}
+  [1m[33mListing Search (100.4ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"camping 2 ppl","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"camping 2 ppl","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"camping 2 ppl","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"camping 2 ppl","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  Rendered listings/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (3.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 319ms (Views: 214.1ms | Searchkick: 100.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:35:54 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:35:54 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:35:54 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=camping+2&commit=Search" for 127.0.0.1 at 2016-08-01 10:35:58 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"camping 2", "commit"=>"Search"}
+  [1m[33mListing Search (71.9ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"camping 2","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"camping 2","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"camping 2","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"camping 2","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[35mListing Load (0.3ms)[0m  SELECT "listings".* FROM "listings" WHERE "listings"."id" = 15
+  Rendered listings/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 274ms (Views: 199.1ms | Searchkick: 71.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:35:58 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:35:58 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:35:58 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=cheap+and+comfy&commit=Search" for 127.0.0.1 at 2016-08-01 10:36:07 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"cheap and comfy", "commit"=>"Search"}
+  [1m[33mListing Search (73.0ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"cheap and comfy","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"cheap and comfy","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"cheap and comfy","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"cheap and comfy","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  Rendered listings/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 312ms (Views: 235.8ms | Searchkick: 73.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:36:07 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:36:07 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:36:07 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=comfy&commit=Search" for 127.0.0.1 at 2016-08-01 10:36:12 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"comfy", "commit"=>"Search"}
+  [1m[33mListing Search (37.5ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"comfy","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"comfy","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"comfy","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"comfy","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[36mListing Load (0.2ms)[0m  [1mSELECT "listings".* FROM "listings" WHERE "listings"."id" = 15[0m
+  Rendered listings/index.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 272ms (Views: 232.0ms | Searchkick: 37.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:36:13 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:36:13 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:36:13 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=cheap&commit=Search" for 127.0.0.1 at 2016-08-01 10:36:19 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"cheap", "commit"=>"Search"}
+  [1m[33mListing Search (34.1ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"cheap","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"cheap","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"cheap","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"cheap","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  Rendered listings/index.html.erb within layouts/application (0.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 191ms (Views: 155.4ms | Searchkick: 34.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:36:19 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:36:19 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:36:19 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=&commit=Search" for 127.0.0.1 at 2016-08-01 10:36:24 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"", "commit"=>"Search"}
+  [1m[35mListing Load (2.0ms)[0m  SELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "listings"[0m
+  Rendered listings/index.html.erb within layouts/application (14.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 178ms (Views: 175.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:36:24 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:36:24 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:36:24 +0800
+
+
+Started GET "/listings/21" for 127.0.0.1 at 2016-08-01 10:36:26 +0800
+Processing by ListingsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mListing Load (0.4ms)[0m  [1mSELECT  "listings".* FROM "listings" WHERE "listings"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mUser Load (2.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+  Rendered reservations/_reserve_form.html.erb (17.8ms)
+  [1m[35mTag Load (70.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "listingtags" ON "tags"."id" = "listingtags"."tag_id" WHERE "listingtags"."listing_id" = $1  [["listing_id", 21]]
+  Rendered listings/show.html.erb within layouts/application (208.1ms)
+Completed 200 OK in 506ms (Views: 293.6ms | ActiveRecord: 91.8ms)
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=unique&commit=Search" for 127.0.0.1 at 2016-08-01 10:36:34 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"unique", "commit"=>"Search"}
+  [1m[33mListing Search (32.6ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"unique","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"unique","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"unique","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"unique","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  Rendered listings/index.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (6.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 189ms (Views: 148.9ms | Searchkick: 32.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:36:35 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:36:35 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:36:35 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=camp&commit=Search" for 127.0.0.1 at 2016-08-01 10:45:31 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"camp", "commit"=>"Search"}
+  [1m[33mListing Search (42.4ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"camp","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"camp","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"camp","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"camp","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[35mListing Load (0.3ms)[0m  SELECT "listings".* FROM "listings" WHERE "listings"."id" = 15
+  Rendered listings/index.html.erb within layouts/application (20.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 226ms (Views: 160.3ms | Searchkick: 42.4ms | ActiveRecord: 18.6ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 10:45:31 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 10:45:31 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 10:45:32 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=camp&commit=Search" for 127.0.0.1 at 2016-08-01 11:11:29 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"camp", "commit"=>"Search"}
+  [1m[33mListing Search (27.3ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"camp","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"camp","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"camp","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"camp","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[35mListing Load (0.2ms)[0m  SELECT "listings".* FROM "listings" WHERE "listings"."id" = 15
+  Rendered listings/index.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 326ms (Views: 268.1ms | Searchkick: 27.3ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/assets/listings.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/transactions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/application.self-95e58ab3eb509777c390b5049c58b05275c45ede3b9ca2fa5bfaa2ca4fbb73c3.css?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/accordion.self-c95f320275150a94241b004a91e21eef9c5ae9965a793cb3e2475f6078a1670d.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/menu.self-7abc1c9401509a7e4fc609b1e461be6fd17e8116e8fda19cc59d05ba79aefb68.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/tags.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/autocomplete.self-3befc48aba87cead090cfd014562b2771a662ac6d2c8197b24c08b2d9f3d9f2d.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/droppable.self-a7a2b4c2cec8fc176f51e4e4291d92bfd3eec40b6a580b47fc54c16334d52882.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect.self-3acdb29e7da09c8f0195b994d2f04d73bfef50dc539c84fd2c835d964d33e5c1.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-blind.self-ed102209d7aa0b7374f3db8478cc7dcff5f9980d3146e8bf9fbfab959c6d5d8a.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-bounce.self-bfcb9288797ecd234ddeedf4fbc5b4c9de94a4e6d8d44e6faa5b5e9836fad9fd.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-clip.self-7368e4597c32360b162d264ff8bbd0cf9fb1535eb9b4564e6eb7c1db3c774bf3.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-drop.self-294aaa72126ad9c94d6558cca792eb3716754713aca98f18a9dd7c493150ed92.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-explode.self-68e74dc114a52f3f4d7033e40c39196961bdcf439652daa2e98baa115c7bb44b.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-fade.self-42d542a5253e0a610717460102ee6bee339c656cc188e491d89eb0779043c963.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-fold.self-ad9967f153423916300dbf1104b00f7ad7bbd6a222a0fcc1012ebe251bcb13c8.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-highlight.self-f922b7179ab8ccfa7865141f38865bba0a3d2bdceba7561c27ca14544dbfd996.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-size.self-368aecefa09656a2be5c72dc8e685b120363a3df812134cbd2dd998bafa179fd.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-scale.self-884a5abcb6d90fcd9f9a071aa8329638184df688afced1b1d3b6be6c69f4dd7f.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-puff.self-93415831093923a70f671d73e8d0b3d94deb37ac7472a036a4add545f565c166.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-pulsate.self-eb107c0d136eccdfbd8a2f0f2ee71e0f6911cb300c6b63cc2fe4f6532e6a9a97.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-shake.self-63bcc14897aac5b84e10690be94d64d5724f864aa14c913b4d1030c461a256ad.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-slide.self-c93054a4a80d1f986760806d81ab067e4a4120bf103337e152ecc24d36e785f6.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/effect-transfer.self-181245634ec522320fc1081f6dbf94fd982f34eefa03555f76817dedfcdea336.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/progressbar.self-a259ff5a2a5e7aef0ec21bda94edd0f6bc1e9821128d901de415956edf212b0d.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/selectable.self-42e53fc2f95211314e36a8094c42560f869c207f16d68cfc206aa37201dcdc03.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/selectmenu.self-09dbcac573f0e508194bd9deff254db090889b380d030261857860309c0918e8.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/slider.self-8af8d2a0661743ba88b4cfb99d5c8c874cfa3fc6528ae4e9252366b388def0b7.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/spinner.self-3c8c95a7bc9c877d0f9c16789246bbedda6b8e8fbf5927951babdab775aed02e.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui/tooltip.self-38f04ac3a6c8fb2391ec6832b68845671cc9013a94371b7eb239478f4835eb73.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery-ui.self-52111578aa54225c9ebfe06f78a62771020ee548bb27d62228ee3f5e6633969d.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/listings.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/tags.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/transactions.self-c5259d46c6172f2cbc6ff32393e1f114f24048e4e2f2fa180100424967a43e28.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 11:11:30 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=comfy&commit=Search" for 127.0.0.1 at 2016-08-01 11:11:35 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"comfy", "commit"=>"Search"}
+  [1m[33mListing Search (40.2ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"comfy","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"comfy","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"comfy","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"comfy","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  [1m[35mListing Load (0.2ms)[0m  SELECT "listings".* FROM "listings" WHERE "listings"."id" = 15
+  Rendered listings/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 197ms (Views: 154.9ms | Searchkick: 40.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 11:11:35 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 11:11:35 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 11:11:35 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=cheap&commit=Search" for 127.0.0.1 at 2016-08-01 11:11:43 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"cheap", "commit"=>"Search"}
+  [1m[33mListing Search (31.5ms)[0m  curl http://localhost:9200/listings_development/_search?pretty -d '{"query":{"dis_max":{"queries":[{"match":{"_all":{"query":"cheap","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"_all":{"query":"cheap","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"_all":{"query":"cheap","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"_all":{"query":"cheap","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}},"size":1000,"from":0,"fields":[]}'
+  Rendered listings/index.html.erb within layouts/application (0.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 222ms (Views: 188.9ms | Searchkick: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 11:11:43 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 11:11:43 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 11:11:43 +0800
+
+
+Started GET "/listings?utf8=%E2%9C%93&query=&commit=Search" for 127.0.0.1 at 2016-08-01 11:11:46 +0800
+Processing by ListingsController#index as HTML
+  Parameters: {"utf8"=>"✓", "query"=>"", "commit"=>"Search"}
+  [1m[36mListing Load (1.4ms)[0m  [1mSELECT  "listings".* FROM "listings"  ORDER BY "listings"."created_at" DESC LIMIT 5 OFFSET 0[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "listings"
+  Rendered listings/index.html.erb within layouts/application (8.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."remember_token" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["remember_token", "3f008c95df4f51ed6ab59d89e5748f4381836a99"]]
+Completed 200 OK in 166ms (Views: 163.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-08-01 11:11:46 +0800
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-08-01 11:11:46 +0800
+
+
+Started GET "/assets/bootstrap-select" for 127.0.0.1 at 2016-08-01 11:11:46 +0800

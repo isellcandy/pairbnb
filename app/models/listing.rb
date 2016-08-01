@@ -1,4 +1,5 @@
 class Listing < ActiveRecord::Base
+	searchkick
 	mount_uploaders :avatars, AvatarUploader
 	belongs_to :user
 	has_many :listingtags, dependent: :destroy
